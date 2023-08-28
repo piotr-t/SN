@@ -1,0 +1,27 @@
+@keyframes spinOpacity {
+    from {opacity: .95;
+        overflow: hidden;}
+    to {opacity: 0;
+        overflow: visible;}
+  }
+
+
+.b-color{
+    opacity: 0.95;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+
+.spinOp{
+    animation-name: spinOpacity;
+    animation-duration: 1s;
+    
+
+}
+
+
+
+

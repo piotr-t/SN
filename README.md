@@ -1,27 +1,193 @@
-# SN
+![Alt text](src/favicon.ico)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+[Title](src/app/app.component.ts)
 
-## Development server
+<p>using Angular Material</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+----------
+###### API aplikacji bazuje na stronie....Wymagane jest klucz dostępu do potalu.W wersji produkcyjnej potrzebna jest warstwa backendu udostępniająca klucz dostepu. 
+#### development mode
+##### Must create `env.ts` file and import it in `enviroment.ts`
+##### `env.ts`
+```typescript
+export const  env = {
+    API_KEY: "your_api_key",
+}
+```
+----------
+----------
+### Angular Material
+#### [Angular Material page](https://getbootstrap.com/)
+```shell
+ng add @angular/material
+```
+### Bootstrap
+#### [Bootstrap page](https://getbootstrap.com/)
+#### [how add bootstrap](https://efficientcoder.net/add-bootstrap-angular-14/)
+```shell
+npm install bootstrap
+npm install jquery
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`angular.json`
 
-## Build
+```json
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          ...
+          "options": { 
+                ...
+            "styles": [
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
+          },
+          ...
+        }
+      }
+```
+### ng-Bootstrap
+#### [ng bootstrap page](https://ng-bootstrap.github.io/#/home)
+```shell
+npm install @ng-bootstrap/ng-bootstrap
+```
+### ngx-Bootstrap
+#### [ngx bootstrap page](https://valor-software.com/ngx-bootstrap/#/)
+```shell
+npm install ngx-bootstrap
+```
+----------
+# Compodoc documentation
+#### [compodoc page](https://compodoc.app)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```shell
+ng add @compodoc/compodoc
+```
+or
+```shell
+npm install --save-dev @compodoc/compodoc
+```
 
-## Running unit tests
+**A:** `Readme.md show in editor VSCode`
+<kbd>Ctl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**B:** `Color Palette in editor VSCode`
+<kbd>Ctl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>
 
-## Running end-to-end tests
+**B:** `Color Palette in editor VSCode`
+<kbd>Ctl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**B:** `Color Palette in editor VSCode`
+<kbd>Ctl</kbd>+<kbd>Space</kbd>
 
-## Further help
+----------
+----------
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Add other Environment
+###### In `environment` folder create file `environment.`*`your_env_name`*`.ts`.
+###### Next add in `angular.json` :
+
+```json
+{
+  "projects": {
+    "proj_name": {
+      ...
+      "architect": {
+        "build": {
+          ...
+          "configurations": {
+            ...
+            "your_env_name": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.your_env_name.ts"
+                }
+              ],
+              "outputHashing": "all"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            ...
+            "your_env_name": {
+              "browserTarget": "sN:build:your_env_name"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        ...
+      }
+    }
+  }
+}
+```
+
+and
+
+```console
+ng serve -o --configuration=your_env_name
+```
+
+----------
+----------
+dsgsdghfdshgfdsh
+> gdgdfhgdfhfdh
+```javascript
+dgdsgdsgdsg
+```
+$$
+dgdsgdsdgdsgdsg
+> fhdfhdhd
+$$
+
+
+
+~~gsgsdgdsgdsgdsg~~
+| Column1    | Column2    | Column3    |
+|---------------- | --------------- | --------------- |
+| Item1.1    | Item2.1    | Item3.1    |
+| Item1.2    | Item2.2    | Item3.2    |
+| Item1.3   | Item2.3   | Item3.3   |
+| Item1.4   | Item2.4   | Item3.4   |
+
+- [x] yes i do
+- [ ] text
+- [ ] text
+- [ ] text
+- [ ] text
+https://stackoverflow.com/questions/32703317/how-to-activate-markdown-user-snippets-in-visual-studio-code
+
+#### create user snippets
+File>Preferences>Configure User Snippets>$`your file name`$.json
+
+#### create user markdown snippets
+File>Preferences>Configure User Snippets>markdown.json
+
+dsgdgdfg <sub>fdsafasf</sub>
+
+
+
